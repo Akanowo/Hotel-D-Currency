@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html, ul {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Navigation bar styles */
+.navigation {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+}
+
+.navigation .navbar {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.navigation .navbar .nav-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.right-side-nav, .left-side-nav {
+  display: flex;
+}
+
+.right-side-nav .nav-item, .left-side-nav .nav-item {
+  margin-right: 100px;
+}
+
+.right-side-nav:first-child {
+  margin-left: 70px;
+}
+
+.navigation .navbar .nav-items .nav-item {
+  text-transform: capitalize;
+}
+
+.navigation .navbar .nav-items .logo {
+  position: absolute;
+  z-index: 1;
+}
+
+.landing {
+  background: url(../img/landing_bg_img.png) center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh);
+  /* opacity: 0.7; */
+}
+
+.landing::before {
+  content: '';
+  position: absolute;
+  background-color: rgba(167, 167, 167, 0.4);
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh);
+}
+
+.landing .landing-contents {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 25%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.landing .landing-contents .contents span {
+  font-size: 49px;
+  color: #FACD00;
+  text-transform: capitalize;
+}
+
+.landing .landing-contents .contents h1 {
+  color: #fff;
+  font-size: 70px;
+  width: 65%;
+  margin: 10px auto;
+  text-transform: capitalize;
+}
