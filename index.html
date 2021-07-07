@@ -6,6 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hotel De Currency</title>
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+    integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -35,10 +42,126 @@
       <div class="contents">
         <span>Book a room</span>
         <h1>For your holidays & relaxation</h1>
-        <div class="booking-container"></div>
+        <div class="booking">
+          <div class="tabs">
+            <div class="item tab-active">
+              <p>Lodging</p>
+            </div>
+            <div class="item">
+              <p>Short rest</p>
+            </div>
+          </div>
+          <div class="booking-container">
+            <div class="item">
+              <p>Check-in</p>
+              <div class="input-group date" data-provide="datepicker">
+                <input type="text" class="form-control">
+                <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-th"></span>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <p>Check-out</p>
+              <div class="input-group date" data-provide="datepicker">
+                <input type="text" class="form-control">
+                <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-th"></span>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <p>Adults</p>
+              <input type="number" id="adult" class="form-control">
+            </div>
+            <div class="item">
+              <p>Children</p>
+              <input type="number" id="adult" class="form-control">
+            </div>
+            <div class="item">
+              <button class="btn btn-primary">Make reservation</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+
+  <section class="container-fluid">
+    <div class="welcome">
+      <div class="welcome-header">
+        <h1>
+          <span>Welcome to</span>
+          hotel de currency
+        </h1>
+        <span>About Us</span>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <img src="./assets/img/welcome1.png" alt="hotel pic">
+          <div class="content">
+            <h3>24 hours fast service</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ad modi iusto non vero aperiam officia rem
+              molestias autem, expedita maxime assumenda consequatur atque ipsam voluptatem reprehenderit facere
+              voluptas veniam!</p>
+            <button class="custom-btn">learn more</button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="content">
+            <h3>Most Affrodable Hotel</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ad modi iusto non vero aperiam officia rem
+              molestias autem, expedita maxime assumenda consequatur atque ipsam voluptatem reprehenderit facere
+              voluptas veniam!</p>
+            <button class="custom-btn">learn more</button>
+          </div>
+          <img src="./assets/img/welcome2.png" alt="maid pic">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="container-fluid" id="luxury">
+    <div class="luxury">
+      <div class="row">
+        <div class="col-md-3">
+          <h1>Choose your luxury</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatum excepturi hic ratione tempora
+            maxime libero, magni eaque totam quasi aut nobis consequuntur dolore minus dicta alias, tenetur nihil odio!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+          <button class="custom-btn-white">view all rooms</button>
+        </div>
+        <div class="col-md-9">
+          <div class="flex-container">
+            <div class="item">
+              <img src="./assets/img/luxury-bedroom.png" alt="luxurious bed">
+              <button class="custom-btn-white">Make Reservation</button>
+            </div>
+            <div class="item">
+              <img src="./assets/img/luxury-bedroom.png" alt="luxurious bed">
+              <button class="custom-btn-white">Make Reservation</button>
+            </div>
+            <div class="item">
+              <img src="./assets/img/luxury-bedroom.png" alt="luxurious bed">
+              <button class="custom-btn-white">Make Reservation</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"
+    integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
