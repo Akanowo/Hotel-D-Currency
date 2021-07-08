@@ -2,7 +2,9 @@
   box-sizing: border-box;
 }
 
-body, html, ul {
+body,
+html,
+ul {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -32,11 +34,13 @@ ul {
   justify-content: space-around;
 }
 
-.right-side-nav, .left-side-nav {
+.right-side-nav,
+.left-side-nav {
   display: flex;
 }
 
-.right-side-nav .nav-item, .left-side-nav .nav-item {
+.right-side-nav .nav-item,
+.left-side-nav .nav-item {
   margin-right: 100px;
 }
 
@@ -98,7 +102,11 @@ ul {
   margin: 10px auto;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   color: #000;
 }
 
@@ -109,6 +117,7 @@ h1, h2, h3, h4, h5 {
   width: 20%;
   /* padding: 10px; */
   background-color: #fff;
+  border-top-right-radius: 14px;
 }
 
 .landing .booking-container {
@@ -117,6 +126,9 @@ h1, h2, h3, h4, h5 {
   align-items: center;
   background-color: #fff;
   padding: 10px;
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+  border-bottom-left-radius: 14px;
 }
 
 .landing .booking-container .item {
@@ -133,8 +145,14 @@ h1, h2, h3, h4, h5 {
   cursor: pointer;
 }
 
+.landing .booking .item .form-control:focus {
+  border-bottom: 1px solid #E4B459;
+  box-shadow: none;
+}
+
 .landing .booking .item input {
   text-align: center;
+  border: none;
 }
 
 .landing .booking .tabs p {
@@ -412,7 +430,8 @@ h1, h2, h3, h4, h5 {
   position: relative;
 }
 
-.testimonial-box .body .quote-start, .testimonial-box .body .quote-end {
+.testimonial-box .body .quote-start,
+.testimonial-box .body .quote-end {
   position: absolute;
   z-index: -1;
 }
