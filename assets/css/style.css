@@ -467,3 +467,31 @@ h5 {
   margin-right: 10px;
   border-radius: 50%;
 }
+
+/* footer styles */
+.footer {
+  padding: 80px 80px 10px;
+  background-color: #000;
+  color: #fff;
+}
+
+.footer h4 {
+  color: #E4B459;
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-size: 16px;
+  letter-spacing: 8px;
+}
+
+.footer input {
+  border: none;
+  /* border-radius: 4px; */
+}
+
+.footer .newsletterBtn {
+  height: inherit;
+  border: none;
+  background-color: #E4B459;
+  color: #fff;
+  border-radius: 0;
+}
