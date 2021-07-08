@@ -98,6 +98,10 @@ ul {
   margin: 10px auto;
 }
 
+h1, h2, h3, h4, h5 {
+  color: #000;
+}
+
 
 .landing .booking .tabs {
   display: flex;
@@ -222,6 +226,7 @@ ul {
   font-size: 60px;
   font-weight: bold;
   text-transform: capitalize;
+  color: #000;
 }
 
 .luxury .row .col-md-3 p {
@@ -244,4 +249,202 @@ ul {
   bottom: 8%;
   right: 24%;
   z-index: 1;
+}
+
+
+/* Restaurant and Bar */
+
+#restaurant_bar {
+  background-color: #fff;
+}
+
+.restaurant_bar {
+  width: 100%;
+  padding: 80px 80px 10px;
+}
+
+.restaurant_bar .row {
+  align-items: center;
+}
+
+.restaurant_bar .row .col-md-3 h1 {
+  font-size: 60px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.restaurant_bar .row .col-md-3 p {
+  font-weight: 400;
+}
+
+.restaurant_bar .flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.restaurant_bar .flex-container .item:first-child img:first-child {
+  margin-bottom: 10px;
+}
+
+.restaurant_bar .flex-container .item {
+  position: relative;
+  text-align: center;
+}
+
+/* Hotel Facilities */
+
+#hotel_facilities {
+  background-color: #E4B459;
+}
+
+.hotel_facilities {
+  width: 100%;
+  padding: 0px 0px 40px 80px;
+}
+
+.hotel_facilities .row {
+  align-items: center;
+}
+
+.hotel_facilities .row .col-md-3 h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #000;
+}
+
+.hotel_facilities .col-md-9 {
+  padding-right: 0;
+}
+
+.hotel_facilities .flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  background-color: #000;
+  border-bottom-left-radius: 20px;
+  position: relative;
+}
+
+.hotel_facilities .flex-container .divider {
+  width: 1px;
+  border: 1px solid #e4b35928;
+  height: 100px;
+  vertical-align: middle;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+}
+
+.hotel_facilities .flex-container .item {
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+}
+
+.hotel_facilities .flex-container .item p {
+  color: #fff;
+  font-size: 13px;
+}
+
+.hotel_facilities .flex-container .item .facility_circle {
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  border-radius: 50%;
+  margin-right: 5px;
+  background-color: #E4B459;
+  display: inline;
+  vertical-align: middle;
+}
+
+.hotel_facilities .flex-container .item .facility_circle div {
+  position: relative;
+  transform: translate(0%, 50%);
+}
+
+.hotel_facilities .flex-container .item .facility_circle p {
+  color: #000;
+}
+
+.hotel_facilities .flex-container .item .facility_circle img {
+  width: auto;
+}
+
+.hotel_facilities .flex-container .item button {
+  position: absolute;
+  bottom: 8%;
+  right: 24%;
+  z-index: 1;
+}
+
+/* Testimonial Styles */
+
+#testimonials {
+  background: url(../img/landing_bg_img.png) center no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding: 0px 0px 0px 80px;
+}
+
+.testimonial-box {
+  padding: 30px;
+  background-color: rgb(228, 179, 89, 0.3);
+  backdrop-filter: blur(8px);
+  width: 40%;
+  height: 100%;
+}
+
+.testimonial-box .header h1 {
+  font-size: 50px;
+  color: #E4B459;
+  margin-bottom: 20px;
+}
+
+.testimonial-box .body {
+  padding-left: 15px;
+  color: #fff;
+  position: relative;
+}
+
+.testimonial-box .body .quote-start, .testimonial-box .body .quote-end {
+  position: absolute;
+  z-index: -1;
+}
+
+.testimonial-box .body .quote-start {
+  top: 0;
+  left: 0;
+}
+
+.testimonial-box .body .quote-end {
+  bottom: 0;
+  right: 0;
+}
+
+.testimonial-box .body .testimonial_text {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 25px;
+}
+
+.testimonial-box .author {
+  display: flex;
+  margin-top: 5px;
+  align-items: center;
+  color: #fff;
+  font-weight: 400;
+  font-size: 23px;
+}
+
+.testimonial-box .author img {
+  height: 80px;
+  width: 80px;
+  margin-right: 10px;
+  border-radius: 50%;
 }
