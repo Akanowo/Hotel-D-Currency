@@ -7,7 +7,9 @@ html,
 ul {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+  width: 100%;
+  max-width: 100%;
 }
 
 ul {
@@ -15,46 +17,25 @@ ul {
 }
 
 /* Navigation bar styles */
-.navigation {
+.navbar {
   width: 100%;
   background-color: #000;
   color: #fff;
-  padding: 20px;
 }
 
-.navigation .navbar {
-  padding-left: 80px;
-  padding-right: 80px;
+.navbar a, .navbar:link {
+  color: #fff;
 }
 
-.navigation .navbar .nav-items {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-}
-
-.right-side-nav,
-.left-side-nav {
-  display: flex;
-}
-
-.right-side-nav .nav-item,
-.left-side-nav .nav-item {
-  margin-right: 100px;
-}
-
-.right-side-nav:first-child {
-  margin-left: 70px;
-}
-
-.navigation .navbar .nav-items .nav-item {
-  text-transform: capitalize;
-}
-
-.navigation .navbar .nav-items .logo {
+.navbar #navbar-logo {
   position: absolute;
   z-index: 1;
+}
+
+.navbar-toggler{
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid #fff;
 }
 
 .landing {
@@ -170,7 +151,7 @@ h5 {
   padding: 10px 25px;
   border: none;
   border-radius: 4px;
-  width: fit-content;
+  width: max-content;
   text-align: left;
   text-transform: capitalize;
 }
@@ -470,6 +451,7 @@ h5 {
 
 /* footer styles */
 .footer {
+  width: 100%;
   padding: 80px 80px 10px;
   background-color: #000;
   color: #fff;
@@ -494,4 +476,295 @@ h5 {
   background-color: #E4B459;
   color: #fff;
   border-radius: 0;
+}
+
+
+/* Media Queries */
+
+@media screen and (max-width: 1100px) {
+  .right-side-nav .nav-item, .left-side-nav .nav-item {
+    margin-right: 70px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .landing .booking .tabs {
+    width: 30%;
+  }
+
+  /* Navbar */
+  .navigation .navbar, .navigation .navbar .nav-items, .right-side-nav, .left-side-nav {
+    display: block;
+  }
+
+  .right-side-nav:first-child {
+    margin: 0;
+  }
+
+  .navigation .navbar .nav-items .logo {
+    position: relative;
+  }
+/* 
+  .navigation .navbar .nav-items {
+    float: right;
+  } */
+}
+
+@media screen and (max-width: 768px) {
+
+  /* General */
+  h1 {
+    text-align: center;
+  }
+
+/* footer */
+  .footer {
+    text-align: center;
+  }
+
+  .footer .input-group {
+    display: inline-flex;
+  }
+
+  /* testimonial */
+
+  #testimonials {
+    padding: 0px 0px 0px 40px;
+  }
+
+  #testimonials .testimonial-box {
+    width: 80%;
+  }
+
+  .testimonial-box .header h1 {
+    text-align: left;
+  }
+
+  /* Hotel facilities */
+  .hotel_facilities {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hotel_facilities .flex-container .item .facility_circle {
+    height: auto;
+    padding: 10px;
+  }
+
+  .hotel_facilities .flex-container .item .facility_circle div {
+    transform: translate(0%, 20%);
+  }
+
+  .hotel_facilities .flex-container .item .facility_circle div p {
+    margin-top: 0px;
+  }
+  
+
+  /* Restaurant Bar */
+  .restaurant_bar {
+    padding: 20px;
+  }
+
+  .restaurant_bar .flex-container .item {
+    text-align: left;
+    margin-top: 20px;
+  }
+
+  /* Luxury */
+  .luxury {
+    padding: 20px;
+  }
+
+  .luxury .col-md-9 {
+    margin-top: 20px;
+  }
+
+  .luxury .flex-container .item button {
+    right: 28%;
+  }
+
+  .luxury .flex-container {
+    flex-wrap: wrap;
+  }
+
+  /* Welcome */
+  .welcome {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .welcome .col-md-6:last-child .content {
+    padding-left: 0;
+  }
+
+  .welcome .col-md-6 .content {
+    width: 70%;
+    margin: auto;
+  }
+
+  .welcome .col-md-6 img {
+    width: auto;
+  }
+
+  /* Landing */
+  .landing .landing-contents .contents h1 {
+    font-size: 40px;
+  }
+
+  .landing .landing-contents .contents span {
+    font-size: 30px;
+  }
+
+  .landing .landing-contents {
+    display: block;
+    max-width: 100%;
+  }
+
+  .landing .booking {
+    width: 90%;
+  }
+
+  .landing .booking .tabs {
+    width: 40%;
+  }
+
+  .landing .booking-container {
+    justify-content: flex-start;
+  }
+
+  .landing .booking .booking-container .item {
+    padding: 10px;
+  }
+
+  .landing .booking .booking-container .item {
+    width: 15%;
+  }
+
+  .landing .booking .tabs .item p {
+    margin-top: 0;
+  }
+
+  .navbar #navbar-logo {
+    position: relative;
+  }
+
+  body {
+    overflow: visible;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+
+  /* General Styling */
+  .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .restaurant_bar .row .col-md-3 h1, .luxury .row .col-md-3 h1, .hotel_facilities .row .col-md-3 h1, .testimonial-box .header h1 {
+    font-size: 40px;
+  }
+
+  /* Restaurant and bar */
+  .restaurant_bar .flex-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .restaurant_bar .flex-container .item {
+    text-align: center;
+  }
+
+  .restaurant_bar .flex-container .item img {
+    width: 100%;
+  }
+
+  /* Luxury */
+  
+  .luxury {
+    text-align: center;
+  }
+
+  .luxury .flex-container .item button {
+    right: 23%;
+  }
+
+  .luxury .flex-container {
+    justify-content: center;
+  }
+
+  /* Welcome */
+  .welcome .col-md-6 {
+    margin-bottom: 40px;
+  }
+
+  .welcome .col-md-6:first-child .content {
+    margin-top: 20px;
+    padding-right: 0;
+  }
+
+  .welcome .col-md-6 img {
+    width: 95%;
+  }
+
+  /* Landing */
+  .landing .booking-container {
+    flex-wrap: wrap;
+    border-top-right-radius: 0;
+  }
+
+  .landing .booking .booking-container .item {
+    width: 80%;
+    margin: auto;
+  }
+
+  .landing .landing-contents {
+    top: 12%
+  }
+  
+  .landing .booking .tabs {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .hotel_facilities .flex-container {
+    flex-direction: column;
+    border-radius: 20px;
+  }
+
+  .hotel_facilities .col-md-9 {
+    padding: 10px;
+  }
+
+  .hotel_facilities .flex-container .divider {
+    transform: rotate(
+      90deg
+      );
+    height: 100%;
+    top: 0;
+  }
+
+  .hotel_facilities .flex-container .item .facility_circle {
+    width: 80%;
+  }
+
+  #testimonials {
+    padding: 0px 10px 0px;
+  }
+
+  #testimonials .testimonial-box {
+    width: 90%;
+    padding: 10px;
+    margin: 0px auto;
+  }
+
+  .landing {
+    height: 800px;
+  }
+
+  .landing::before {
+    height: 800px;
+  }
 }
