@@ -478,6 +478,15 @@ h5 {
   border-radius: 0;
 }
 
+.parsley-errors-list {
+  font-size: 13px;
+  color: #f30e0e;
+}
+
+.modal {
+  text-align: left;
+}
+
 
 /* Media Queries */
 
