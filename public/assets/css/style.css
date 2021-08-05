@@ -423,16 +423,26 @@ h5 {
 /* Testimonial Styles */
 
 #testimonials {
-  background: url(../img/landing_bg_img.png) center no-repeat;
+  background: url(../img/images/banner.jpg) center no-repeat;
   background-size: cover;
   width: 100%;
   padding: 0px 0px 0px 80px;
 }
 
+.testimonials::before {
+  content: '';
+  position: absolute;
+  background: rgba(167, 167, 167, 0.4) center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100px;
+  z-index: 9;
+}
+
 .testimonial-box {
   padding: 30px;
   background-color: rgb(228, 179, 89, 0.3);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(15px);
   width: 40%;
   height: 100%;
 }
