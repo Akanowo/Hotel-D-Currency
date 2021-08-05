@@ -7,6 +7,8 @@ $(document).ready(() => {
   const phone = $('#phone');
   const checkInDate = $('#checkInDate');
   const checkOutDate = $('#checkOutDate');
+  const checkInTime = $('#checkInTime')
+  const checkOutTime = $('#checkOutTime');
   const adults = $('#adults');
   const children = $('#children');
   const bookingCode = `#${Date.now()}`;
@@ -31,9 +33,22 @@ $(document).ready(() => {
     });
   });
 
+  $('#checkInTime').timepicker();
+  $('#checkOutTime').timepicker();
 
   const handleTabClick = (e) => {
     $('.booking .tabs .item').toggleClass('tab-active');
+    if(e.target.innerHTML.includes('Short rest')) {
+      $('#checkInTimeDiv').toggleClass('hide');
+      $('#checkOutTimeDiv').toggleClass('hide');
+      $('#checkOutDate').toggleClass('hide');
+    }
+
+    if(e.target.innerHTML.includes('Lodging')) {
+      $('#checkInTimeDiv').toggleClass('hide');
+      $('#checkOutTimeDiv').toggleClass('hide');
+      $('#checkOutDate').toggleClass('hide');
+    }
   };
 
   $('.booking .tabs .item').on('click', handleTabClick);
@@ -55,10 +70,13 @@ $(document).ready(() => {
           <body>
           <p>A new booking just occured through the website contact form from:</p>
           <b>Booking Code</b>: ${bookingCode}<br>
+          ${checkInTime.val() ? `<b>Booking Type</b>: Short Rest<br>` :`Lodging`}
           <b>Name</b>: ${name.val()}<br>
           <b>Phone Number</b>: ${phone.val()}<br>
           <b>Check In Date</b>: ${checkInDate.val()}<br>
-          <b>Check Out Date</b>: ${checkOutDate.val()}<br>
+          ${checkOutDate.val() ? `<b>Check Out Date</b>: ${checkOutDate.val()}<br>` : ''}
+          ${checkInTime.val() ? `<b>Check In Time</b>: ${checkInTime.val()}<br>` : ''}
+          ${checkOutTime.val() ? `<b>Check Out Time</b>: ${checkOutTime.val()}<br>` : ''}
           <b>Adults</b>: ${adults.val() > 0 ? adults.val() : 0}<br>
           <b>Children</b>: ${children.val() > 0 ? children.val() : 0}<br>
           </body>

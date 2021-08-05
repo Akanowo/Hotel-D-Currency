@@ -14,6 +14,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
     integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.css">
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
@@ -29,10 +30,10 @@
           <a class="nav-link" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Rooms</a>
+          <a class="nav-link" href="#luxury">Luxury</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Restaurant & Bar</a>
+          <a class="nav-link" href="#restaurant_bar">Restaurant & Bar</a>
         </li>
         <li style="margin-left: 200px;">
         <li class="nav-item" id="navbar-logo">
@@ -42,13 +43,13 @@
         </li>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Facilites</a>
+          <a class="nav-link" href="#hotel_facilities">Facilities</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Gallery</a>
+          <a class="nav-link" href="#testimonials">Testimonials</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="#contact">Contact</a>
         </li>
       </ul>
     </div>
@@ -73,58 +74,48 @@
               <div class="item">
                 <p>Check-in</p>
                 <div class="input-group date" id="checkIn">
-                  <input type="text"
-                    required
-                    data-parsley-required
-                    name="checkInDate"
-                    id="checkInDate"
+                  <input type="text" required data-parsley-required name="checkInDate" id="checkInDate"
                     class="form-control">
                   <div class="input-group-addon">
                     <span class="glyphicon glyphicon-th"></span>
                   </div>
                 </div>
               </div>
-              <div class="item">
+              <div class="item" id="checkOutDate">
                 <p>Check-out</p>
                 <div class="input-group date" id="checkOut">
-                  <input
-                    type="text"
-                    required
-                    data-parsley-required
-                    id="checkOutDate"
-                    name="checkOutDate"
-                    class="form-control"
-                  >
+                  <input type="text" id="checkOutDate" name="checkOutDate"
+                    class="form-control">
                   <div class="input-group-addon">
                     <span class="glyphicon glyphicon-th"></span>
                   </div>
                 </div>
               </div>
+              <div class="item hide" id="checkInTimeDiv">
+                <p>Check-in-time</p>
+                  <input type='text' class="form-control" id='checkInTime' />
+              </div>
+              <div class="item hide" id="checkOutTimeDiv">
+                <p>Check-out-time</p>
+                  <input type='text' class="form-control" id='checkOutTime' />
+              </div>
               <div class="item">
                 <p>Adults</p>
-                <input type="number"
-                  required
-                  data-parsley-required
-                  data-parsley-type="number"
-                  id="adults"
-                  class="form-control"
-                >
+                <input type="number" required data-parsley-required data-parsley-type="number" id="adults"
+                  class="form-control">
               </div>
               <div class="item">
                 <p>Children</p>
-                <input type="number" required data-parsley-required data-parsley-type="number" id="children" class="form-control">
+                <input type="number" required data-parsley-required data-parsley-type="number" id="children"
+                  class="form-control">
               </div>
               <div class="item">
-                <button
-                  type="button"
-                  class="custom-btn"
-                  data-toggle="modal"
-                  data-target="#continueModal"
-                >
+                <button type="button" class="custom-btn" data-toggle="modal" data-target="#continueModal">
                   Make reservation
                 </button>
               </div>
-              <div class="modal fade" id="continueModal" tabindex="-1" role="dialog" aria-labelledby="continueModal" aria-hidden="true">
+              <div class="modal fade" id="continueModal" tabindex="-1" role="dialog" aria-labelledby="continueModal"
+                aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -136,44 +127,22 @@
                     <div class="modal-body">
                       <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text"
-                          name="name"
-                          id="name"
-                          required
-                          data-parsley-required
-                          class="form-control"
-                          placeholder="Enter your name"
-                          aria-describedby="helpId">
+                        <input type="text" name="name" id="name" required data-parsley-required class="form-control"
+                          placeholder="Enter your name" aria-describedby="helpId">
                         <small id="helpId" class="text-muted">Eg: John Doe</small>
                       </div>
                       <div class="form-group">
                         <label for="email">Email</label>
-                        <input
-                          type="email"
-                          class="form-control"
-                          name="email"
-                          id="email"
-                          aria-describedby="emailHelpId"
-                          placeholder="Enter your email address"
-                          required
-                          data-parsley-required
-                          data-parsley-type="email"
-                        >
+                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId"
+                          placeholder="Enter your email address" required data-parsley-required
+                          data-parsley-type="email">
                         <small id="emailHelpId" class="form-text text-muted">Eg: johndoe@gmail.com</small>
                       </div>
                       <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input
-                          type="tel"
-                          name="phone"
-                          id="phone"
-                          class="form-control"
-                          placeholder="Enter your phone number"
-                          aria-describedby="helpId"
-                          required
-                          data-parsley-required
-                          data-parsley-type="number"
-                        >
+                        <input type="tel" name="phone" id="phone" class="form-control"
+                          placeholder="Enter your phone number" aria-describedby="helpId" required data-parsley-required
+                          data-parsley-type="number">
                         <small id="helpId" class="text-muted">234XXXXXX</small>
                       </div>
                     </div>
@@ -190,7 +159,7 @@
     </div>
   </section>
 
-  <section class="container-fluid">
+  <section class="container-fluid" id="#features">
     <div class="welcome">
       <div class="welcome-header">
         <h1>
@@ -204,18 +173,18 @@
           <img src="/assets/img/welcome1.png" alt="hotel pic">
           <div class="content">
             <h3>24 hours fast service</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ad modi iusto non vero aperiam officia rem
-              molestias autem, expedita maxime assumenda consequatur atque ipsam voluptatem reprehenderit facere
-              voluptas veniam!</p>
+            <p>Here at HotelDeCurrency, we provide 24hours electricity, security and our kitchen runs all day and night.
+            </p>
             <button class="custom-btn">learn more</button>
           </div>
         </div>
         <div class="col-md-6">
           <div class="content">
             <h3>Most Affrodable Hotel</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ad modi iusto non vero aperiam officia rem
-              molestias autem, expedita maxime assumenda consequatur atque ipsam voluptatem reprehenderit facere
-              voluptas veniam!</p>
+            <p>HotelDeCurrency is Sango and Ota Environs most popular hotel. We offer our clients a wonderful blend of
+              work and leisure services, with eating and entertainment alternatives carefully interwoven in one amazing
+              venue, located in the center of Ota, Ogun State. All of this is topped off with services that are up to
+              international standards.</p>
             <button class="custom-btn">learn more</button>
           </div>
           <img src="/assets/img/welcome2.png" alt="maid pic">
@@ -230,25 +199,24 @@
       <div class="row">
         <div class="col-md-3">
           <h1>Choose your luxury</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatum excepturi hic ratione tempora
-            maxime libero, magni eaque totam quasi aut nobis consequuntur dolore minus dicta alias, tenetur nihil odio!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          <p>Each of our guest rooms is well equipped with standard facilities and some have industrial views. Our
+            state-of-the-art quiet air conditioning systems and blackout drapes can help you have a good night's sleep.
           </p>
-          <button class="custom-btn-white">view all rooms</button>
+          <!-- <button class="custom-btn-white">view all rooms</button> -->
         </div>
         <div class="col-md-9">
           <div class="flex-container">
             <div class="item">
               <img src="/assets/img/luxury-bedroom.png" alt="luxurious bed">
-              <button class="custom-btn-white">Make Reservation</button>
+              <!-- <button class="custom-btn-white">Make Reservation</button> -->
             </div>
             <div class="item">
               <img src="/assets/img/luxury-bedroom.png" alt="luxurious bed">
-              <button class="custom-btn-white">Make Reservation</button>
+              <!-- <button class="custom-btn-white">Make Reservation</button> -->
             </div>
             <div class="item">
               <img src="/assets/img/luxury-bedroom.png" alt="luxurious bed">
-              <button class="custom-btn-white">Make Reservation</button>
+              <!-- <button class="custom-btn-white">Make Reservation</button> -->
             </div>
           </div>
         </div>
@@ -261,11 +229,11 @@
       <div class="row">
         <div class="col-md-3">
           <h1>Restaurant & Bar</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatum excepturi hic ratione tempora
-            maxime libero, magni eaque totam quasi aut nobis consequuntur dolore minus dicta alias, tenetur nihil odio!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          <p>Our Restaurant is an awesome dining experience that takes you on a gourmet adventure. The Bar and Lounge
+            caters to great wine and spirits connoisseurs, while the café employs the world's best coffee bean to create
+            a variety of blends for the ultimate coffee enthusiast.
           </p>
-          <button class="custom-btn">View more</button>
+          <!-- <button class="custom-btn">View more</button> -->
         </div>
         <div class="col-md-9">
           <div class="flex-container">
@@ -297,21 +265,23 @@
                   <p>Gym</p>
                 </div>
               </div>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur itaque maiores sint dicta voluptatem
-                impedit doloribus alias laborum consequatur nobis quo ducimus magni, mollitia nihil aperiam repellendus
-                vitae omnis exercitationem.</p>
+              <p>Our well-equipped gym, which includes steam rooms and an instructor, is available to our in-house fit
+                fam junkies. Outside guests are not permitted access to the gym, which is only available to members.
+                Monday through Sunday (7 a.m. to 8 p.m.)
+              </p>
             </div>
             <div class="divider"></div>
             <div class="item">
               <div class="facility_circle">
                 <div>
                   <img src="/assets/img/laundry.png" alt="laudry img">
-                  <p>Laundry</p>
+                  <p>Swimming Pool</p>
                 </div>
               </div>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur itaque maiores sint dicta voluptatem
-                impedit doloribus alias laborum consequatur nobis quo ducimus magni, mollitia nihil aperiam repellendus
-                vitae omnis exercitationem.</p>
+              <p>Being an in-house visitor comes with the added benefit of being able to swim at any time of day or
+                night. Outside guests must pay an extra fee to use the pool.
+                Monday through Sunday (8 a.m. to 8 p.m.)
+              </p>
             </div>
           </div>
         </div>
@@ -328,10 +298,16 @@
       <div class="body">
         <img src="/assets/img/quote_start.png" alt="quote-start" class="quote-start">
         <img src="/assets/img/quote_end.png" alt="quote-end" class="quote-end">
-        <p class="testimonial_text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id nulla voluptate minima?
-          Voluptate debitis
-          voluptatum consectetur cupiditate quae est porro. Ea consectetur exercitationem aliquam ipsam officia, dolorem
-          a maiores delectus?</p>
+        <p class="testimonial_text">I would recommend the Four Points by Sheraton to any visitor who wants to stay in
+          world-class accommodations in the center of Lagos.<br>
+          The cuisine was excellent, particularly the breakfast.<br>
+          Environmentally friendly. <br>
+          Staff is kind and friendly. <br>
+          Excellent internet service. <br><br>
+          For the days spent, it was a pleasant experience. It was a hit with my pals. I prefer the eating area. The
+          rooms are still fantastic, but the cleanliness isn't up to par. The telephone should be cleaned thoroughly, as
+          well as the headrest. The toilet needs to be updated.
+        </p>
       </div>
       <div class="author">
         <img src="/assets/img/author_img.png" alt="testimonial author img">
@@ -340,9 +316,9 @@
     </div>
   </section>
 
-  <footer class="footer">
+  <footer class="footer" id="contact">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="links">
           <ul>
             <li>Help Desk</li>
@@ -354,12 +330,12 @@
           </ul>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="logo-container">
           <img src="/assets/img/logo.png" alt="site logo">
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="contact-info">
           <address>
             22/24 kokumo avenue tomori estate opposite Nasfat, Sango Ota, Ota
@@ -375,7 +351,7 @@
 
         </div>
       </div>
-      <div class="col-md-3">
+      <!-- <div class="col-md-3">
         <div class="newsletter">
           <h4>newsletter</h4>
           <p>Subscribe to our email newsletter to receive updates and news.</p>
@@ -388,25 +364,27 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </footer>
 
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"
     integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
   <script type="module" src="/assets/js/script.js"></script>
 </body>
 

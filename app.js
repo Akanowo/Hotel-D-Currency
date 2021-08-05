@@ -1,15 +1,15 @@
-const expres = require('express');
+const express = require('express');
 const path = require('path')
 
-const app = expres();
+const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-app.use(expres.json());
-app.use(expres.urlencoded({ extended: false }))
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }))
 app.set('view engine', 'ejs');
-app.use(expres.static(__dirname + '/public'));
-app.use('/assets', expres.static(path.join(__dirname + '/public')));
+app.use(express.static(__dirname + '/public'));
+app.use('/assets', express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
     return res.render('index');

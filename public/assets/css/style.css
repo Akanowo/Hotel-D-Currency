@@ -10,10 +10,15 @@ ul {
   /* overflow-x: hidden; */
   width: 100%;
   max-width: 100%;
+  scroll-behavior: smooth;
 }
 
 ul {
   list-style-type: none;
+}
+
+.hide {
+  display: none;
 }
 
 /* Navigation bar styles */
@@ -21,6 +26,8 @@ ul {
   width: 100%;
   background-color: #000;
   color: #fff;
+  position: fixed;
+  z-index: 9999;
 }
 
 .navbar a, .navbar:link {
@@ -278,7 +285,7 @@ h5 {
 
 .restaurant_bar .flex-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: nowrap;
   flex-direction: row;
 }
@@ -334,7 +341,7 @@ h5 {
   vertical-align: middle;
   position: absolute;
   top: 20%;
-  left: 50%;
+  left: 52.5%;
 }
 
 .hotel_facilities .flex-container .item {
