@@ -22,16 +22,16 @@ module.exports = async function sendMail({ to, from, subject, message, code, nam
 	});
 
 	const mailData = {
-		from,
-		to,
+		from: `New Hotel Booking<${process.env.RECIPIENT_EMAIL}`,
+		to: 'madenibuyan@gmail.com',
 		subject,
 		html: message
 	};
 
 	const replyData = {
-		from: to,
+		from: `Booking Success<${process.env.RECIPIENT_EMAIL}>`,
 		to: from,
-		subject: `Booking [#${code}]<${from}>`,
+		subject: `Booking [#${code}]>`,
 		html: `
       <html>
         <body>

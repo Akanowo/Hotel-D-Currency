@@ -40,7 +40,7 @@ const routes = () => {
 		`;
 
 			// send mail
-			sendMail({ to: process.env.RECIPIENT_EMAIL, from: email, subject: 'Hotel Booking', message, code: bookingCode, name }, (err, response) => {
+			sendMail({ from: email, subject: 'Hotel Booking', message, code: bookingCode, name }, (err, response) => {
 				if(err) {
 					console.log(err)
 					return res.status(500).json({
