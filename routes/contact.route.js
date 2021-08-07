@@ -19,11 +19,13 @@ const routes = () => {
 				phone
 			} = req.body;
 
+			const bookingCode = uniqid('#')
+
 			const message = `
 			<html>
 				<body>
 				<p>A new booking just occured through the website contact form from:</p>
-				<b>Booking Code</b>: ${uniqid('#')}<br>
+				<b>Booking Code</b>: ${bookingCode}<br>
 				<b>Booking Type</b>: ${booking_type}<br>
 				<b>Name</b>: ${name}<br>
 				<b>Phone Number</b>: ${phone}<br>
@@ -38,7 +40,7 @@ const routes = () => {
 		`;
 
 			// send mail
-			sendMail({ to: process.env.RECIPIENT_EMAIL, from: email, subject: 'Hotel Booking', message }, (err, response) => {
+			sendMail({ to: process.env.RECIPIENT_EMAIL, from: email, subject: 'Hotel Booking', message, code: bookingCode, name }, (err, response) => {
 				if(err) {
 					console.log(err)
 					return res.status(500).json({

@@ -9,30 +9,7 @@ const config = new AWS.Config({
 
 const ses = new AWS.SES(config);
 
-module.exports = async function sendMail({ to, from, message, subject, code }, cb) {
-	//   console.log('In send mail function');
-	//   const params = {
-	//     Destination: {
-	//       ToAddresses: [
-	//         to
-	//       ]
-	//     },
-	//     Message: {
-	//       Body: {
-	//         Text: {
-	//           Charset: 'UTF-8',
-	//           Data: `${message}`
-	//         },
-	//       },
-	//       Subject: {
-	//         Charset: 'UTF-8',
-	//         Data: subject
-	//       }
-	//     },
-	//     Source: `Deggia<${from}>`
-	//   };
-
-	//   return ses.sendEmail(params, handleError);
+module.exports = async function sendMail({ to, from, subject, message, code, name }, cb) {
 
 	const transport = nodemailer.createTransport({
 		host: process.env.HOST,
@@ -58,8 +35,8 @@ module.exports = async function sendMail({ to, from, message, subject, code }, c
 		html: `
       <html>
         <body>
-      		<h4>Hello, ${name.val()}</h4>
-         	<p>Thank you for booking with us, your booking code is ${bookingCode}. Kindly note this as it will be required for any futher operation. Our team will review your booking status and get back to you. <br>Many Thanks!</p>
+      		<h4>Hello, ${name}</h4>
+         	<p>Thank you for booking with us, your booking code is ${code}. Kindly note this as it will be required for any futher operation. Our team will review your booking status and get back to you. <br>Many Thanks!</p>
           </body>
           </html>
 		`
