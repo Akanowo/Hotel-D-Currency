@@ -31,7 +31,7 @@ module.exports = async function sendMail({ to, from, subject, message, code, nam
 	const replyData = {
 		from: `Booking Success<${process.env.RECIPIENT_EMAIL}>`,
 		to: from,
-		subject: `Booking [#${code}]>`,
+		subject: `Booking [#${code}]`,
 		html: `
       <html>
         <body>
