@@ -1,5 +1,4 @@
 // @ts-nocheck
-import { username, password, host, recipient } from './credentials.js';
 $(document).ready(() => {
   const bookingForm = document.getElementById('bookingForm');
   const email = $('#email');
@@ -54,72 +53,34 @@ $(document).ready(() => {
   $('.booking .tabs .item').on('click', handleTabClick);
 
   // Form handling
-  bookingForm.onsubmit = (e) => {
+  bookingForm.onsubmit = async (e) => {
     e.preventDefault();
     submitBtn.text('sending...');
     submitBtn.attr('disabled', true);
-    Email.send({
-      Host: host,
-      Username: username,
-      Password: password,
-      To: `<${recipient}>`,
-      From: email.val(),
-      Subject: 'New Hotel Booking',
-      Body: `
-        <html>
-          <body>
-          <p>A new booking just occured through the website contact form from:</p>
-          <b>Booking Code</b>: ${bookingCode}<br>
-          ${checkInTime.val() ? `<b>Booking Type</b>: Short Rest<br>` :`Lodging`}
-          <b>Name</b>: ${name.val()}<br>
-          <b>Phone Number</b>: ${phone.val()}<br>
-          <b>Check In Date</b>: ${checkInDate.val()}<br>
-          ${checkOutDate.val() ? `<b>Check Out Date</b>: ${checkOutDate.val()}<br>` : ''}
-          ${checkInTime.val() ? `<b>Check In Time</b>: ${checkInTime.val()}<br>` : ''}
-          ${checkOutTime.val() ? `<b>Check Out Time</b>: ${checkOutTime.val()}<br>` : ''}
-          <b>Adults</b>: ${adults.val() > 0 ? adults.val() : 0}<br>
-          <b>Children</b>: ${children.val() > 0 ? children.val() : 0}<br>
-          </body>
-        </html>
-      `
-    }).then((msg) => {
-      console.log(msg)
-      if(msg !== 'OK') {
-        alert('Something went wrong, try again');
-        return;
-      }
-      Email.send({
-        Host: host,
-        Username: username,
-        Password: password,
-        To: `<${email.val()}>`,
-        From: recipient,
-        Subject: `Booking Success [${bookingCode}]`,
-        Body: `
-          <html>
-            <body>
-            <h4>Hello, ${name.val()}</h4>
-            <p>Thank you for booking with us, your booking code is ${bookingCode}. Kindly note this as it will be required for any futher operation. Our team will review your booking status and get back to you. <br>Many Thanks!</p>
-            </body>
-          </html>
-        `
-      }).then((res) => {
-        console.log(res);
-        if(res !== 'OK') {
-          alert('Something went wrong, try again');
-          return;
-        }
-        submitBtn.text('Submit');
-        submitBtn.prop('disabled', false);
-        email.val('');
-        name.val('');
-        phone.val('');
-        checkInDate.val('');
-        checkOutDate.val('');
-        adults.val('');
-        children.val('');
-        alert('Booking complete, please check your mail');
-      });
-    });
+
+    const data = {
+      booking_type: checkInTime.val() ? 'Short Rest' : 'Lodging',
+      check_in_date: checkInDate.val(),
+      check_out_date: checkOutDate.val(),
+      check_in_time: checkInTime.val(),
+      check_out_time: checkOutTime.val(),
+      adults: adults.val(),
+      children: children.val(),
+      name: name.val(),
+      email: email.val(),
+      phone: phone.val()
+    }
+
+    let response;
+    try {
+      response = await (await axios.post('/api/booking/', data)).data;      
+    } catch (error) {
+      alert('An error occured');
+      console.log(error);
+    }
+
+    if(response.status) {
+      alert('Booking Successful! Please check you mail');
+    }
   };
 });

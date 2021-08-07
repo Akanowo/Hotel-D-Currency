@@ -148,7 +148,9 @@ h5 {
 
 .landing .booking .item input {
   text-align: center;
-  border: none;
+  border-right: none;
+  border-left: none;
+  border-top: none;
 }
 
 .landing .booking .tabs p {
