@@ -6,11 +6,8 @@ $(document).ready(() => {
   const phone = $('#phone');
   const checkInDate = $('#checkInDate');
   const checkOutDate = $('#checkOutDate');
-  const checkInTime = $('#checkInTime')
-  const checkOutTime = $('#checkOutTime');
   const adults = $('#adults');
   const children = $('#children');
-  const bookingCode = `#${Date.now()}`;
   const submitBtn = $('#submitBtn');
 
   const parsleyInstance = $('#bookingForm').parsley();
@@ -32,26 +29,6 @@ $(document).ready(() => {
     });
   });
 
-  $('#checkInTime').timepicker();
-  $('#checkOutTime').timepicker();
-
-  const handleTabClick = (e) => {
-    $('.booking .tabs .item').toggleClass('tab-active');
-    if(e.target.innerHTML.includes('Short rest')) {
-      $('#checkInTimeDiv').toggleClass('hide');
-      $('#checkOutTimeDiv').toggleClass('hide');
-      $('#checkOutDate').toggleClass('hide');
-    }
-
-    if(e.target.innerHTML.includes('Lodging')) {
-      $('#checkInTimeDiv').toggleClass('hide');
-      $('#checkOutTimeDiv').toggleClass('hide');
-      $('#checkOutDate').toggleClass('hide');
-    }
-  };
-
-  $('.booking .tabs .item').on('click', handleTabClick);
-
   // Form handling
   bookingForm.onsubmit = async (e) => {
     e.preventDefault();
@@ -59,11 +36,8 @@ $(document).ready(() => {
     submitBtn.attr('disabled', true);
 
     const data = {
-      booking_type: checkInTime.val() ? 'Short Rest' : 'Lodging',
       check_in_date: checkInDate.val(),
       check_out_date: checkOutDate.val(),
-      check_in_time: checkInTime.val(),
-      check_out_time: checkOutTime.val(),
       adults: adults.val(),
       children: children.val(),
       name: name.val(),

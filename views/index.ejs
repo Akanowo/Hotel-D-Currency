@@ -14,8 +14,6 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
     integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.css">
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
@@ -66,9 +64,6 @@
             <div class="item tab-active">
               <p>Lodging</p>
             </div>
-            <div class="item">
-              <p>Short rest</p>
-            </div>
           </div>
           <form id="bookingForm" novalidate method="POST" autocomplete="off">
             <div class="booking-container">
@@ -90,14 +85,6 @@
                     <span class="glyphicon glyphicon-th"></span>
                   </div>
                 </div>
-              </div>
-              <div class="item hide" id="checkInTimeDiv">
-                <p>Check-in-time</p>
-                <input type='text' class="form-control" id='checkInTime' />
-              </div>
-              <div class="item hide" id="checkOutTimeDiv">
-                <p>Check-out-time</p>
-                <input type='text' class="form-control" id='checkOutTime' />
               </div>
               <div class="item">
                 <p>Adults</p>
@@ -274,26 +261,13 @@
         </div>
         <div class="col-md-9" id="facility_det">
           <div class="flex-container">
-            <div class="item">
-              <div class="facility_circle">
-                <div>
-                  <img src="/assets/img/dumbbell 1.png" alt="gym img">
-                  <p>Gym</p>
-                </div>
+            <div class="facility_circle">
+              <div>
+                <img src="/assets/img/laundry.png" alt="laudry img">
+                <p>Swimming Pool</p>
               </div>
-              <p>Our well-equipped gym, which includes steam rooms and an instructor, is available to our in-house fit
-                fam junkies. Outside guests are not permitted access to the gym, which is only available to members.
-                Monday through Sunday (7 a.m. to 8 p.m.)
-              </p>
             </div>
-            <div class="divider"></div>
-            <div class="item">
-              <div class="facility_circle">
-                <div>
-                  <img src="/assets/img/laundry.png" alt="laudry img">
-                  <p>Swimming Pool</p>
-                </div>
-              </div>
+            <div class="facility_desc">
               <p>Being an in-house visitor comes with the added benefit of being able to swim at any time of day or
                 night. Outside guests must pay an extra fee to use the pool.
                 Monday through Sunday (8 a.m. to 8 p.m.)
@@ -397,8 +371,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
     integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script type="module" src="/assets/js/script.js"></script>
 </body>
